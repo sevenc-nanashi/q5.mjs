@@ -10,6 +10,10 @@ If you:
 Then this fork is for you.
 The changes should be minimal, for make it easy to merge with upstream q5.js.
 
+Changes:
+- Is ESModule based
+- No global mode
+
 Lines below are the original README.md from q5.js.
 
 ---

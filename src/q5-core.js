@@ -327,10 +327,15 @@ Q5.methods = {
 Q5.prototype.registerMethod = (m, fn) => Q5.methods[m].push(fn);
 Q5.prototype.registerPreloadMethod = (n, fn) => (Q5.prototype[n] = fn[n]);
 
+// Do not indent these block to make it easier to merge.
+if (false) {
+
 if (Q5._server) global.p5 ??= global.Q5 = Q5;
 
 if (typeof window == 'object') window.p5 ??= window.Q5 = Q5;
 else global.window = 0;
+
+}
 
 function createCanvas(w, h, opt) {
 	if (!Q5._hasGlobal) {

@@ -1,17 +1,23 @@
 {
-	"name": "q5",
+	"name": "q5-mjs",
 	"version": "2.23.13",
-	"description": "Beginner friendly graphics powered by WebGPU and optimized for interactive art!",
-	"author": "quinton-ashley",
+	"description": "Fork of q5.js, with support for ESModule and TypeScript.",
+	"author": "sevenc-nanashi",
 	"contributors": [
+		"quinton-ashley",
 		"Tezumie",
 		"LingDong-"
 	],
 	"license": "LGPL-3.0",
 	"homepage": "https://q5js.org/home",
-	"main": "q5-server.js",
-	"types": "q5.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/q5.mjs",
+			"types": "./dist/q5.d.ts"
+		}
+	},
 	"scripts": {
+		"build": "node --experimental-strip-types ./tools/build.mts",
 		"bundle": "cat src/q5-core.js src/q5-canvas.js src/q5-c2d-canvas.js src/q5-c2d-shapes.js src/q5-c2d-image.js src/q5-c2d-soft-filters.js src/q5-c2d-text.js src/q5-color.js src/q5-display.js src/q5-dom.js src/q5-fes.js src/q5-input.js src/q5-math.js src/q5-record.js src/q5-sound.js src/q5-util.js src/q5-vector.js src/q5-webgpu-canvas.js src/q5-webgpu-shapes.js src/q5-webgpu-image.js src/q5-webgpu-text.js src/q5-webgpu-shaders.js > q5.js",
 		"min": "terser q5.js --compress ecma=2025 --mangle > q5.min.js",
 		"dist": "bun bundle && bun min",
@@ -24,10 +30,10 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/q5js/q5.js.git"
+		"url": "git+https://github.com/sevenc-nanashi/q5.mjs.git"
 	},
 	"bugs": {
-		"url": "https://github.com/q5js/q5.js/issues"
+		"url": "https://github.com/sevenc-nanashi/q5.mjs/issues"
 	},
 	"keywords": [
 		"q5.js",
@@ -41,7 +47,8 @@
 	"devDependencies": {
 		"jest-cli": "^29.7.0",
 		"jsdom": "^25.0.1",
-		"skia-canvas": "^1.0.2",
-		"json2csv": "^6.0.0-alpha.2"
+		"json2csv": "^6.0.0-alpha.2",
+		"prettier": "^3.5.3",
+		"skia-canvas": "^1.0.2"
 	}
 }
