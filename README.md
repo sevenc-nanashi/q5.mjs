@@ -1,3 +1,19 @@
+# q5.mjs
+
+This is a fork of [q5.js](https://github.com/q5js/q5.js), but it's ESModule based.
+If you:
+
+- Use bundler, such as Vite, Webpack, Rollup, etc.
+- Use server-side JavaScript, such as Node.js, Deno, Bun, etc.
+- Like ESModules
+
+Then this fork is for you.
+The changes should be minimal, for make it easy to merge with upstream q5.js.
+
+Lines below are the original README.md from q5.js.
+
+---
+
 # <img src="https://q5js.org/q5js_logo.webp" height="64"> <img src="https://q5js.org/q5js_brand.webp" height="64">
 
 ## Visit [q5js.org](https://q5js.org)! 💫
@@ -31,10 +47,10 @@ Use the [q5.d.ts](q5.d.ts) file in Visual Studio Code to get autocompletion and 
 
 ```json
 {
-	"compilerOptions": {
-		"target": "ESNext"
-	},
-	"include": ["*.js", "*/*.js", "node_modules/q5/q5.d.ts"]
+  "compilerOptions": {
+    "target": "ESNext"
+  },
+  "include": ["*.js", "*/*.js", "node_modules/q5/q5.d.ts"]
 }
 ```
 
